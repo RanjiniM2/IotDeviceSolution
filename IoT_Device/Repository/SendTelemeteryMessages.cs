@@ -19,7 +19,7 @@ namespace IotHubDevice.Repository
 
         public static DeviceClient client = null;
 
-        public static string myDeviceConnection = "HostName=IothubRanjini.azure-devices.net;DeviceId=demotest;SharedAccessKey=K19BgQ1CjNtVbluy5vSqvBuCf3TBfJBn33zf2utxh4M=";
+        public static string myDeviceConnection = "HostName=IothubRanjini.azure-devices.net;DeviceId=demodevicetest;SharedAccessKey=wQHcxRIhrwnkZkSuWnA4LIuqhm4RRClDh70vk+sJDC4=";
         public static async Task SendMessage(string deviceName)
         {
             try
@@ -35,15 +35,15 @@ namespace IotHubDevice.Repository
                     var telemetry = new
                     {
                         temperature = twinCollection["temperature"],
-                        drift = twinCollection["drift"],
+                        //drift = twinCollection["drift"],
                         accurarcy = twinCollection["accurarcy"],
-                        fullscale = twinCollection["fullscale"],
+                        //fullscale = twinCollection["fullscale"],
                         pressure = twinCollection["pressure"],
-                        supplyVoltageLevel = twinCollection["supplyVoltageLevel"],
+                        //supplyVoltageLevel = twinCollection["supplyVoltageLevel"],
                         frequency = twinCollection["frequency"],
-                        resolution = twinCollection["resolution"],
+                        //resolution = twinCollection["resolution"],
                         dateTimeLastAppLaunch = twinCollection["dateTimeLastAppLaunch"],
-                        sensorType = twinCollection["sensorType"],
+                        //sensorType = twinCollection["sensorType"],
 
 
                     };
