@@ -13,12 +13,12 @@ namespace IotHubDevice.Repository
 {
     public class IoTDeviceProperties
     {
-        private static string iothubConnectionString = "HostName=IothubRanjini.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jSWL7gsN35fay1cbaebEjZ+ilYKuaMO0TL/tV47ZQi4=";
+        private static string iothubConnectionString = "HostName=IothubRanjini.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=vhixLc5CLipPjMLN/VAv/Xm5G1R+CoKxILLoekMaUeo=";
         public static RegistryManager registryManager=RegistryManager.CreateFromConnectionString(iothubConnectionString);
 
         public static DeviceClient client = null;
 
-        public static string myDeviceConnection = "HostName=IothubRanjini.azure-devices.net;DeviceId=test;SharedAccessKey=dpgT2vIc4nH3pn2pv73Bwzz8Utwdj7r+RvXoyn1O3v8=";
+        public static string myDeviceConnection = "HostName=IothubRanjini.azure-devices.net;DeviceId=demotest;SharedAccessKey=K19BgQ1CjNtVbluy5vSqvBuCf3TBfJBn33zf2utxh4M=";
 
         public static async Task AddDeviceProperties(string deviceName,DeviceProperties deviceProperties)
         {
@@ -34,15 +34,15 @@ namespace IotHubDevice.Repository
                 twinCollection= new TwinCollection();
                 connectivity= new TwinCollection();
                 connectivity["type"] = "cellular";
-                twinCollection["connectivity"] = "connectivity";
+                //twinCollection["connectivity"] = "connectivity";
                 twinCollection["temperature"] = deviceProperties.temperature;
-                twinCollection["drift"] = deviceProperties.drift;
-                twinCollection["fullscale"] = deviceProperties.fullscale;
+                //twinCollection["drift"] = deviceProperties.drift;
+                //twinCollection["fullscale"] = deviceProperties.fullscale;
                 twinCollection["pressure"] = deviceProperties.pressure;
                 twinCollection["accurarcy"] = deviceProperties.accurarcy;
-                twinCollection["sensorType"] = deviceProperties.sensorType;
-                twinCollection["resolution"] = deviceProperties.resolution;
-                twinCollection["supplyVoltageLevel"] = deviceProperties.supplyVoltageLevel;
+                //twinCollection["sensorType"] = deviceProperties.sensorType;
+               // twinCollection["resolution"] = deviceProperties.resolution;
+               // twinCollection["supplyVoltageLevel"] = deviceProperties.supplyVoltageLevel;
                 twinCollection["frequency"] = deviceProperties.frequency;
                 twinCollection["dateTimeLastAppLaunch"] = deviceProperties.dateTimeLastAppLaunch;
                await client.UpdateReportedPropertiesAsync(twinCollection);
@@ -59,7 +59,7 @@ namespace IotHubDevice.Repository
             TwinCollection twinCollection, telemetryconfig;
             twinCollection = new TwinCollection();
             telemetryconfig = new TwinCollection();
-            telemetryconfig["frequency"] = "15Hz";
+            telemetryconfig["temperature"] = "98F";
             twinCollection["telemetryconfig"] = telemetryconfig;
             device.Properties.Desired["telemetryconfig"] = telemetryconfig;
             await registryManager.UpdateTwinAsync(device.DeviceId,device,device.ETag);
@@ -87,7 +87,7 @@ namespace IotHubDevice.Repository
                     @"{
                        tags:{
                             location:{
-                                region:'Canada',
+                                region:'San Francisko',
                                 plant:'IOTPro'
                                 }
                             }

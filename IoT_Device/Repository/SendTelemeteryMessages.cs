@@ -14,12 +14,12 @@ namespace IotHubDevice.Repository
 {
     public class SendTelemeteryMessages
     {
-        private static string iothubConnectionString = "HostName=IothubRanjini.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jSWL7gsN35fay1cbaebEjZ+ilYKuaMO0TL/tV47ZQi4=";
+        private static string iothubConnectionString = "HostName=IothubRanjini.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=vhixLc5CLipPjMLN/VAv/Xm5G1R+CoKxILLoekMaUeo=";
         public static RegistryManager registryManager;
 
         public static DeviceClient client = null;
 
-        public static string myDeviceConnection = "HostName=IothubRanjini.azure-devices.net;DeviceId=test;SharedAccessKey=dpgT2vIc4nH3pn2pv73Bwzz8Utwdj7r+RvXoyn1O3v8=";
+        public static string myDeviceConnection = "HostName=IothubRanjini.azure-devices.net;DeviceId=demotest;SharedAccessKey=K19BgQ1CjNtVbluy5vSqvBuCf3TBfJBn33zf2utxh4M=";
         public static async Task SendMessage(string deviceName)
         {
             try
