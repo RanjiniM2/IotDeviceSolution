@@ -19,7 +19,7 @@ namespace IotHubDevice.Repository
 
         public static DeviceClient client = null;
 
-        public static string myDeviceConnection = "HostName=IothubRanjini.azure-devices.net;DeviceId=demodevicetest;SharedAccessKey=wQHcxRIhrwnkZkSuWnA4LIuqhm4RRClDh70vk+sJDC4=";
+        public static string myDeviceConnection = "HostName=iothubranjini.azure-devices.net;DeviceId=testdevice;SharedAccessKey=dMNFqtLLdh+akQbegtdnHtl2SF8p1l8PjzwB2HEnUL0=";
         public static async Task SendMessage(string deviceName)
         {
             try
