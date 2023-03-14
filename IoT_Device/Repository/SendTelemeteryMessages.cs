@@ -14,7 +14,7 @@ namespace IotHubDevice.Repository
 {
     public class SendTelemeteryMessages
     {
-        private static string iothubConnectionString = "HostName=IothubRanjini.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=vhixLc5CLipPjMLN/VAv/Xm5G1R+CoKxILLoekMaUeo=";
+        private static string iothubConnectionString = "HostName=iothubranjini.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=b2L9WR5tVRmwQ50qV4qp1Of9k9E/DaiDESTe7QQNWnI=";
         public static RegistryManager registryManager;
 
         public static DeviceClient client = null;

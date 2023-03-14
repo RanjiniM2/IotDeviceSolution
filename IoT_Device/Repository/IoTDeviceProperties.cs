@@ -13,7 +13,7 @@ namespace IotHubDevice.Repository
 {
     public class IoTDeviceProperties
     {
-        private static string iothubConnectionString = "HostName=IothubRanjini.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=vhixLc5CLipPjMLN/VAv/Xm5G1R+CoKxILLoekMaUeo=";
+        private static string iothubConnectionString = "HostName=iothubranjini.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=b2L9WR5tVRmwQ50qV4qp1Of9k9E/DaiDESTe7QQNWnI=";
         public static RegistryManager registryManager=RegistryManager.CreateFromConnectionString(iothubConnectionString);
 
         public static DeviceClient client = null;
@@ -34,15 +34,12 @@ namespace IotHubDevice.Repository
                 twinCollection= new TwinCollection();
                 connectivity= new TwinCollection();
                 connectivity["type"] = "cellular";
-                //twinCollection["connectivity"] = "connectivity";
+                
                 twinCollection["temperature"] = deviceProperties.temperature;
-                //twinCollection["drift"] = deviceProperties.drift;
-                //twinCollection["fullscale"] = deviceProperties.fullscale;
+                
                 twinCollection["pressure"] = deviceProperties.pressure;
                 twinCollection["accurarcy"] = deviceProperties.accurarcy;
-                //twinCollection["sensorType"] = deviceProperties.sensorType;
-               // twinCollection["resolution"] = deviceProperties.resolution;
-               // twinCollection["supplyVoltageLevel"] = deviceProperties.supplyVoltageLevel;
+               
                 twinCollection["frequency"] = deviceProperties.frequency;
                 twinCollection["dateTimeLastAppLaunch"] = deviceProperties.dateTimeLastAppLaunch;
                await client.UpdateReportedPropertiesAsync(twinCollection);
